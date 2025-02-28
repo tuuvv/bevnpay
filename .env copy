@@ -1,0 +1,7 @@
+DATABASE_URI=mongodb://localhost:21010/ecommerce
+PORT=8081
+vnp_Api="https://sandbox.vnpayment.vn/merchant_webapi/api/transaction"
+VNP_TMN_CODE=D24B0S7E
+VNP_HASH_SECRET=WTQP36V2F1JV8RMVX6JTXRUWUV0IB3TV
+VNP_URL=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+VNP_RETURN_URL=http://localhost:3000/vnpay_return
