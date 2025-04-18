@@ -10,30 +10,5 @@ services:
       - mongo-data:/data/db
     restart: always
 
-  backend:
-    build: .
-    container_name: bevnpay
-    ports:
-      - '4000:4000'
-    depends_on:
-      - mongo
-    environment:
-      - NODE_ENV=production
-      - PORT=4000
-      - MONGO_URI=mongodb://mongo:27017/ecommerce
-    restart: always
-    command: npm run start
-
-  frontend:
-    build:
-      context: ../fevnpay
-    container_name: fevnpay
-    ports:
-      - '3000:3000'
-    environment:
-      - NODE_ENV=production
-    restart: always
-    command: npm run dev
-
 volumes:
   mongo-data:
