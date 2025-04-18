@@ -11,7 +11,7 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         PORT: 4000,
-        MONGO_URI: 'mongodb://localhost:27017/ecommerce'
+        MONGO_URI: 'mongodb://127.0.0.1:27017/ecommerce'
       }
     }
   ]
