@@ -27,7 +27,7 @@ jobs:
             git pull origin staging
 
             echo "📦 Installing dependencies..."
-            npm install
+            yarn
 
             echo "🔨 Building NestJS app..."
             npm run build
