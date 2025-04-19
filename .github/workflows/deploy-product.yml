@@ -1,0 +1,36 @@
+name: 🚀 Deploy NestJS Backend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Deploy BE via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            echo "🔄 Deploying NestJS Backend..."
+
+            cd /www/wwwroot/bevnpay
+            git fetch origin main
+            git checkout main
+            git pull origin main
+
+            echo "📦 Installing dependencies..."
+            yarn
+
+            echo "🔨 Building NestJS app..."
+            yarn build
+
+            echo "🚀 Reloading app with PM2..."
+            pm2 reload ecosystem.config.js || pm2 start ecosystem.config.js
