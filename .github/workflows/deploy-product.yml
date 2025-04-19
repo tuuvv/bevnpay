@@ -21,11 +21,19 @@ jobs:
           script: |
             echo "🔄 Deploying NestJS Backend..."
 
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
             cd /www/wwwroot/bevnpay
             git fetch origin main
             git checkout main
             git pull origin main
+
+            echo "📦 Installing dependencies..."
             yarn
+
+            echo "🔨 Building NestJS app..."
             yarn build
+
             echo "🚀 Reloading app with PM2..."
             pm2 reload ecosystem.config.js || pm2 start ecosystem.config.js
