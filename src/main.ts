@@ -16,7 +16,7 @@ async function bootstrap() {
     "preflightContinue": false,
     credentials: true
   });
-  console.log("đã chạy với port", 8081)
-  await app.listen(8081);
+  console.log("đã chạy với port", 4000)
+  await app.listen(4000);
 }
 bootstrap();
