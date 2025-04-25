@@ -15,8 +15,8 @@ async function bootstrap() {
     "preflightContinue": false,
     credentials: true
   });
-  console.log("đã chạy với port", 4000)
-  const port = process.env.PORT || 4000;
+  console.log("đã chạy với port", 4100)
+  const port = process.env.PORT || 4100;
   await app.listen(port);
 
 }
