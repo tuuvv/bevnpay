@@ -15,9 +15,9 @@ jobs:
       - name: Deploy BE via SSH
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.SSH_HOST_AWS }} 
+          username: ${{ secrets.SSH_USERNAME_AWS  }} 
+          key: ${{ secrets.SSH_PRIVATE_KEY_AWS  }} 
           script: |
             echo "🔄 Deploying NestJS Backend..."
             export NVM_DIR="$HOME/.nvm"
