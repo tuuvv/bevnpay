@@ -1,19 +1,17 @@
 module.exports = {
   apps: [
     {
-      name: 'bevnpay',
+      name: 'bevnpay-staging',
       script: 'dist/main.js',
-      cwd: './',
+      cwd: '/www/wwwroot/staging/bevnpay',
       instances: 1,
-      exec_mode: 'fork', 
-      autorestart: true,
-      watch: false,
-      max_memory_restart: '500M',
+      exec_mode: 'fork',
       env: {
-        NODE_ENV: 'production',
-        PORT: 4000,
-        MONGO_URI: 'mongodb://127.0.0.1:27017/ecommerce'
+        NODE_ENV: 'staging',
+        PORT: 4100,
+        MONGO_URI: 'mongodb://127.0.0.1:27017/ecommerce_staging'
       }
     }
   ]
-};
+}
+
