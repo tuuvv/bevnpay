@@ -21,7 +21,7 @@ jobs:
           script: |
             echo "🔄 Deploying NestJS Backend..."
 
-            cd /www/wwwroot/bevnpay
+            cd /www/wwwroot/staging/bevnpay
             git fetch origin staging
             git checkout staging
             git pull origin staging
